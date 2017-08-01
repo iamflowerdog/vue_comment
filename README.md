@@ -23,22 +23,22 @@ npm run build --report
 
 #### App主组件
 
-  * 负责接收add组件传递过来的数据
-  * 向list组件分发数据
-  * 操作数据: 调用deleteComment函数
-  
-    ```
-    deleteComment(comment){
-    
-        let index = this.comments.indexOf(comment);
+* 负责接收add组件传递过来的数据
+* 向list组件分发数据
+* 操作数据: 调用deleteComment函数
 
-        this.comments.splice(index, 1);
+  ```
+  deleteComment(comment){
 
-        //delete this.comments[index];
-        
-      }
-    ```
-   > 注意：不能使用 `delete`操作符 操作数组，value返回undefined 
+      let index = this.comments.indexOf(comment);
+
+      this.comments.splice(index, 1);
+
+      //delete this.comments[index];
+
+    }
+  ```
+> 注意：不能使用 `delete`操作符 操作数组，value返回undefined 
 
 #### addComment组件
 
@@ -61,6 +61,7 @@ methods: {
     }
   }
 ```
+> 注意: 必须用this.comment 如果用 comment= {} 不生效，因为变量是按值传递的
   
 #### comment-list组件
 
